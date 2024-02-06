@@ -56,6 +56,12 @@ public class EchoServer
                     responses.add("huh?");
                     responses.add("what?");
                     responses.add("guh!?");
+                    responses.add("whar??");
+                    responses.add("hm?");
+                    responses.add("SHUR UP!!");
+                    responses.add("enough talky :3");
+                    responses.add("STOP TALKING!!!");
+                    responses.add(">:(");
                     response = responses.get(random.nextInt(responses.size()));
                     out.println(response);
                 }

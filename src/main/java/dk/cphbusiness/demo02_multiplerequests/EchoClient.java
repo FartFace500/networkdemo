@@ -12,6 +12,7 @@ public class EchoClient
 
     private static final int PORT = 9090;
     private static final String IP = "127.0.0.1";
+//    private static final String IP = "10.83.130.3";
 
     private Socket clientSocket;
     private PrintWriter out;
