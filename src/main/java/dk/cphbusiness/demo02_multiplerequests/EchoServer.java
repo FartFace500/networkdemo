@@ -52,13 +52,11 @@ public class EchoServer
                 {
                     Random random = new Random();
                     String response = "";
-                    int picker;
                     ArrayList<String> responses = new ArrayList<>();
                     responses.add("huh?");
                     responses.add("what?");
                     responses.add("guh!?");
-                    picker = responses.size();
-                    response = responses.get(random.nextInt(picker));
+                    response = responses.get(random.nextInt(responses.size()));
                     out.println(response);
                 }
             } while (inputLine != null && !inputLine.equals("bye"));
