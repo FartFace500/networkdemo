@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /*
  * Purpose of this demo is to show the most basic use of sockets with inspiration
@@ -38,7 +41,16 @@ public class SimpleServer
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String greeting = in.readLine();
             System.out.println(greeting);
-            out.println("Hello SimpleClient, Greetings from SimpleServer");
+            int i = Integer.parseInt(LocalTime.now().toString().substring(0,2));
+            String besked = "";
+            if (7 <= i && i < 12){
+                besked = "god morgen";
+            }
+            if (12 <= i && i < 18){
+                besked = "god eftermiddag";
+            }
+
+            out.println("Hej - " + besked + ", kl. er nu " + LocalTime.now().toString().substring(0,5) + " og dags dato er " + LocalDate.now());
         }
         catch (IOException e)
         {
