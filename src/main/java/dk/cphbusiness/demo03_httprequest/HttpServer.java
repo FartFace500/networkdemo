@@ -33,17 +33,21 @@ public class HttpServer
             clientSocket = serverSocket.accept(); // wait for client request
             out = new PrintWriter(clientSocket.getOutputStream(), true);
 
+            String responseBody = "<html><head><title>monkey world</title></head>"+
+                    "<body><h1>Funny Monkey :3</h1>"+
+                    "<p>mmm banana</p>"+
+                    "</body></html>";
+
             String responseHeader = "HTTP/1.1 200 OK" + System.lineSeparator() +
                     "Date: Mon, 23 May 2022 22:38:34 GMT" + System.lineSeparator() +
-                    "Server: Apache/2.4.1 (Unix)\n" +
+                    "Server: Apache/2.4.1 (Unix)" + System.lineSeparator() +
                     "Content-Type: text/html; charset=UTF-8" + System.lineSeparator() +
-                    "Content-Length: 87" + System.lineSeparator() +
+                    "Content-Length: "+ responseBody.length() + System.lineSeparator() +
                     "Connection: close" + System.lineSeparator();
 
-            String responseBody = "<html><head><title>hello world</title></head><body><h1>Hello World</h1></body></html>";
 
             out.println(responseHeader);
-            out.println(System.lineSeparator() + System.lineSeparator()); // separate header and payload section
+//            out.println(System.lineSeparator() + System.lineSeparator()); // separate header and payload section
             out.println(responseBody);
         }
         catch (IOException e)
