@@ -17,8 +17,8 @@ public class HttpRequest {
             "Upgrade-Insecure-Requests: 1";
     HttpRequest httpRequest = new HttpRequest();
     Map<String,String> testMap = httpRequest.parse(subject);
-        for (int i = 0; i < testMap.size(); i++) {
-            System.out.println(testMap);
+        for (Map.Entry<String, String> stringStringEntry : testMap.entrySet()) {
+            System.out.println(stringStringEntry.getKey() +":"+ stringStringEntry.getValue());
         }
 
     }
