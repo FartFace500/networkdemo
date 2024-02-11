@@ -31,7 +31,7 @@ public class HttpRequest {
                 temp = stringArrayList.get(i).split(": ");
                 parsemap.put(temp[0],temp[1]);
             }
-            parsemap.put("Info",stringArrayList.get(0));
+            parsemap.put("Request",stringArrayList.get(0));
         }
         return parsemap;
     }

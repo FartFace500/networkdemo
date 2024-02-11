@@ -21,7 +21,7 @@ public class RequestFileClient
         RequestFileClient client = new RequestFileClient();
         client.startConnection(IP, PORT);
         String httpRequest =
-                "GET /pages/index.html HTTP/1.1" + System.lineSeparator() +
+                "GET /pages/login.html HTTP/1.1" + System.lineSeparator() +
                         "Host: " + IP + System.lineSeparator() +
                  "Content-Type: text/html; charset=UTF-8" + System.lineSeparator() +
                 "Content-Length: 87" + System.lineSeparator() +
